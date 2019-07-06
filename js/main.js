@@ -1,6 +1,8 @@
 
 const surveyRoot = document.getElementById("surveyRoot");
 
+const answers = {id: 0, name: "John Doe"};
+
 function testStartup() {
     inflateForm("testButton.html");
 }
@@ -15,4 +17,10 @@ function inflateForm(name) {
     };
     xHttp.open("GET", "forms/" + name, true);
     xHttp.send();
+}
+
+function setId() {
+    let id = document.getElementById("srv1").elements[0];
+    answers.id = id;
+    inflateForm("testButton.html");
 }
