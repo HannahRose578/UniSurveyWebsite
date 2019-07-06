@@ -3,7 +3,6 @@ const surveyRoot = document.getElementById("surveyRoot");
 
 function testStartup() {
     inflateForm("testButton.html");
-    return
 }
 
 function inflateForm(name) {
@@ -16,5 +15,4 @@ function inflateForm(name) {
     };
     xHttp.open("GET", "forms/" + name, true);
     xHttp.send();
-    return
 }
