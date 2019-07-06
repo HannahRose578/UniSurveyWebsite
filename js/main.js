@@ -20,7 +20,7 @@ function inflateForm(name) {
 }
 
 function setId() {
-    let id = document.getElementById("srv1").elements[0];
+    let id = document.getElementById("enterId").elements[0];
     answers.id = id;
     inflateForm("testButton.html");
 }
