@@ -4,7 +4,7 @@ const surveyRoot = document.getElementById("surveyRoot");
 const answers = {id: 0, name: "John Doe"};
 
 function testStartup() {
-    inflateForm("testButton.html");
+    inflateForm("slider.html");
 }
 
 function inflateForm(name) {
