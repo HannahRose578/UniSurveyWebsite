@@ -1,15 +1,20 @@
-function testStartup() {
-    var e, xhttp;
-    e = document.getElementById("surveyRoot");
 
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
+const surveyRoot = document.getElementById("surveyRoot");
+
+function testStartup() {
+    inflateForm("testButton.html");
+    return
+}
+
+function inflateForm(name) {
+    let xHttp = new XMLHttpRequest();
+    xHttp.onreadystatechange = function () {
         if (this.readyState == 4) {
-            if (this.status == 200){ e.innerHTML = this.responseText}
-            if (this.status == 404) {e.innerHTML = "Survey not found.";}
+            if (this.status == 200){ surveyRoot.innerHTML = this.responseText; }
+            if (this.status == 404) { surveyRoot.innerHTML = "Survey not found."; }
         }
     };
-    xhttp.open("GET", "forms/testButton.html", true);
-    xhttp.send();
+    xHttp.open("GET", "forms/" + name, true);
+    xHttp.send();
     return
 }
