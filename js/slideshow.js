@@ -8,13 +8,15 @@ function changeImage() {
 }
 
 function slideShowInit(){
-    pos = getRandomNumber(0,50);
+    pos = getRandomNumber(0,49);
     changeImage();
     document.onkeydown = function(e) {
         e = e || window.event;
         if (!onTimeout){
+            onTimeout = true;
             if (e.keyCode == '37' && pos > 0){ pos -= 1; changeImage();}
             else if (e.keyCode == '39' && pos < images.length-1){ pos += 1; changeImage();}
+            setTimeout(function () {onTimeout = false;}, 70);
         }
     };
 }
