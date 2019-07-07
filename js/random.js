@@ -1,4 +1,4 @@
 function getRandomNumber() {
-    var randomnumber = Math.floor(Math.random() * (100 + 1) + 1); // Generates random number
-    return randomnumber.toString();
+    // Generates random number
+    return Math.floor(Math.random() * (100 + 1) + 1).toString();
 }
