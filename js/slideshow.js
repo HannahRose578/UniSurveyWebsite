@@ -13,13 +13,8 @@ function slideShowInit(){
     document.onkeydown = function(e) {
         e = e || window.event;
         if (!onTimeout){
-            onTimeout = true;
-            if (e.keyCode == '37' && pos > 0) pos -= 1;
-            else if (e.keyCode == '39' && pos < images.length-1) pos += 1;
-            changeImage();
-            setTimeout(function () {
-                onTimeout = false;
-            }, 10);
+            if (e.keyCode == '37' && pos > 0){ pos -= 1; changeImage();}
+            else if (e.keyCode == '39' && pos < images.length-1){ pos += 1; changeImage();}
         }
     };
 }
