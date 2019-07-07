@@ -5,7 +5,6 @@ const answers = {id: 0, lastEatTime: "00:00"};
 
 let progress = 0;
 
-
 const formByIndex = ["testButton.html", "enterId.html", "lastEat.html", "VASInstruct1.html", "VASHunger.html"];
 
 function testStartup() {
