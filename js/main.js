@@ -5,7 +5,7 @@ const answers = {id: 0, lastEatTime: "00:00"};
 
 let progress = 0;
 
-const formByIndex = ["testButton.html", "enterId.html", "lastEat.html", "VASInstruct1.html", "VASHunger.html"];
+const formByIndex = ["testButton.html", "enterId.html", "lastEat.html", "VASInstruct1.html", "VASHunger.html", "slideshow.html"];
 
 function testStartup() {
     inflateForm("testButton.html");
@@ -50,6 +50,9 @@ function prevForm() {
 function setUpForm(index){
     switch (index) {
         case 4: document.getElementById("sliderVASHungry").value = getRandomNumber(); break;
+        case 5:
+            slideShowInit();
+            break;
         default: console.log("form " + progress + " needs no setup"); break;
     }
 }

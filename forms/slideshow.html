@@ -1,9 +1,9 @@
 <div class="container">
     <div id="slideshow">
-        <img alt="slideshow" src="https://i.imgur.com/neIqyy3.jpg" id="imgClickAndChange" />
+        <img alt="slideshow alt" src="https://i.imgur.com/neIqyy3.jpg" id="imgClickAndChange" width="768px" height="576px" />
     </div>
 </div>
-<script>
+<!--script>
     const images = ["https://i.imgur.com/neIqyy3.jpg", "https://i.imgur.com/uQ8xE4A.jpg", "https://i.imgur.com/GWR6ZHE.jpg", "https://i.imgur.com/Xmwf3Fn.jpg"];
     let pos = 0;
     let onTimeout = false;
@@ -11,6 +11,11 @@
     function changeImage() {
         let img = document.getElementById("imgClickAndChange");
         img.src = images[pos];
+    }
+
+    function slideShowInit(){
+        pos = getRandomNumber(0,50);
+        changeImage();
     }
 
     document.onkeydown = function(e) {
@@ -24,6 +29,5 @@
                 onTimeout = false;
             }, 10);
         }
-
     }
-</script>
+</script-->
