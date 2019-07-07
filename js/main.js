@@ -1,15 +1,11 @@
 
 const surveyRoot = document.getElementById("surveyRoot");
 
-const answers = {id: 0, lastEatTime: "00:00"};
+const answers = {id: 0, lastEatTime: "00:00", hunger: -1};
 
 let progress = 0;
 
-const formByIndex = ["testButton.html", "enterId.html", "lastEat.html", "VASInstruct1.html", "VASHunger.html", "slideshow.html"];
-
-function testStartup() {
-    inflateForm("testButton.html");
-}
+const formByIndex = ["enterId.html", "lastEat.html", "VASInstruct1.html", "VASHunger.html", "slideshow.html"];
 
 function inflateForm(name) {
     let xHttp = new XMLHttpRequest();
@@ -49,8 +45,8 @@ function prevForm() {
 
 function setUpForm(index){
     switch (index) {
-        case 4: document.getElementById("sliderVASHungry").value = getRandomNumber(); break;
-        case 5:
+        case 3: document.getElementById("sliderVASHungry").value = getRandomNumber(0,100); break;
+        case 4:
             slideShowInit();
             break;
         default: console.log("form " + progress + " needs no setup"); break;
@@ -59,8 +55,9 @@ function setUpForm(index){
 
 function saveFormValues(index) {
     switch (index) {
-        case 1: answers.id = document.getElementById("enterId").elements[0]; break;
-        case 2: answers.lastEatTime = document.getElementById("lastEat").elements[0].value; break;
+        case 0: answers.id = document.getElementById("enterId").value; break;
+        case 1: answers.lastEatTime = document.getElementById("lastEat").value; break;
+        case 3: answers.hunger = document.getElementById("sliderVASHungry").value; break;
         default: console.log("Nothing to save for form " + index); break;
     }
 }

@@ -4,11 +4,12 @@ let onTimeout = false;
 
 function changeImage() {
     let img = document.getElementById("imgClickAndChange");
+    console.log(pos);
     img.src = images[pos];
 }
 
 function slideShowInit(){
-    pos = getRandomNumber(0,50);
+    pos = getRandomNumber(0,49);
     changeImage();
     document.onkeydown = function(e) {
         e = e || window.event;
@@ -19,7 +20,7 @@ function slideShowInit(){
             changeImage();
             setTimeout(function () {
                 onTimeout = false;
-            }, 10);
+            }, 70);
         }
     };
 }
