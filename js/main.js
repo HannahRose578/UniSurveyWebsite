@@ -6,7 +6,7 @@ const answers = {id: 0, lastEatTime: "00:00"};
 let progress = 0;
 
 
-const formByIndex = ["testButton.html", "enterId.html", "lastEat.html", "slider.html"];
+const formByIndex = ["testButton.html", "enterId.html", "lastEat.html", "VASInstruct1.html", "VASHunger.html"];
 
 function testStartup() {
     inflateForm("testButton.html");
@@ -16,13 +16,12 @@ function inflateForm(name) {
     let xHttp = new XMLHttpRequest();
     xHttp.onreadystatechange = function () {
         if (this.readyState == 4) {
-            if (this.status == 200) { surveyRoot.innerHTML = this.responseText; }
+            if (this.status == 200) { surveyRoot.innerHTML = this.responseText; setUpForm(progress);}
             if (this.status == 404) { surveyRoot.innerHTML = "Survey not found."; }
         }
     };
     xHttp.open("GET", "forms/" + name, true);
     xHttp.send();
-    setUpForm(progress);
 }
 
 function nextForm(){
@@ -51,7 +50,7 @@ function prevForm() {
 
 function setUpForm(index){
     switch (index) {
-        //setup your form
+        case 4: document.getElementById("sliderVASHungry").value = getRandomNumber(); break;
         default: console.log("form " + progress + " needs no setup"); break;
     }
 }
