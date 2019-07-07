@@ -5,7 +5,8 @@ const answers = {id: 0, lastEatTime: "00:00"};
 
 let progress = 0;
 
-const formByIndex = ["testButton.html", "enterId.html", "lastEat.html"];
+
+const formByIndex = ["testButton.html", "enterId.html", "lastEat.html", "slider.html"];
 
 function testStartup() {
     inflateForm("testButton.html");
